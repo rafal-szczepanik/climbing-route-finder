@@ -1,0 +1,11 @@
+<form action="/rock/area" method="POST">
+  <label for="">
+    <select name="land_name">
+      <option value="">Brak</option>
+      {{#each lands}}
+        <option value="{{this.land_name}}">{{this.land_name}}</option>
+      {{/each}}
+    </select>
+  </label>
+  <button>Szukaj</button>
+</form>
