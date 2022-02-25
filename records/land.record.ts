@@ -2,28 +2,28 @@ import {pool} from "../utils/db";
 import {v4 as uuid} from 'uuid';
 import {FieldPacket} from "mysql2";
 
-type RockRecordResult = [RockRecord[], FieldPacket[]]
+type RockRecordResult = [LandRecord[], FieldPacket[]]
 
-export class RockRecord {
+export class LandRecord {
     id?: string;
     land_name: string;
     area_name: string;
 
-    constructor(obj: RockRecord) {
+    constructor(obj: LandRecord) {
         this.id = obj.id
         this.land_name = obj.land_name
         this.area_name = obj.area_name
     }
 
-    static async listAll(): Promise<RockRecord[]> {
+    static async listAll(): Promise<LandRecord[]> {
         const [results] = await pool.execute("SELECT * FROM `land`") as RockRecordResult
-        return results.map(obj => new RockRecord(obj))
+        return results.map(obj => new LandRecord(obj))
     }
 
-    static async getArea(name): Promise<RockRecord[]> {
+    static async getArea(name): Promise<LandRecord[]> {
         const [results] = await pool.execute("SELECT * FROM `area` WHERE `land_name` = :name", {
             name
         }) as RockRecordResult
-        return results.map(obj => new RockRecord(obj))
+        return results.map(obj => new LandRecord(obj))
     }
 }
