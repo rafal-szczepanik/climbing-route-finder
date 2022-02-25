@@ -1,5 +1,5 @@
-export const notFound = (req,res)=>{
-    res.status(404).render({
-        message: 'Not found'
+export const notFound = (req, res) => {
+    res.status(404).render('error', {
+        message: 'Nie znaleziono strony'
     })
 }
