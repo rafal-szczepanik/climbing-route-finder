@@ -1,11 +1,13 @@
-<form action="/rock/area" method="POST">
-  <label for="">
-    <select name="land_name">
-      <option value="">Brak</option>
-      {{#each lands}}
-        <option value="{{this.land_name}}">{{this.land_name}}</option>
+<h2>Filter by Rock</h2>
+<form action="/land/area/rock_area/rock/climbing_route" method="POST">
+  <li>
+    <select name="rock_area_name">
+      {{#each rockArea}}
+        <option value="{{this.rock_name}}">{{this.rock_name}}</option>
       {{/each}}
     </select>
-  </label>
-  <button>Szukaj</button>
+    <button>Szukaj</button>
+  </li>
 </form>
+
+

@@ -1,0 +1,11 @@
+<h2>Choose Jura you want to search</h2>
+<form action="/land/area" method="POST">
+  <label for="">
+    <select size="3" name="land_name">
+      {{#each lands}}
+        <option value="{{this.land_name}}">{{this.land_name}}</option>
+      {{/each}}
+    </select>
+  </label>
+  <button>Szukaj</button>
+</form>

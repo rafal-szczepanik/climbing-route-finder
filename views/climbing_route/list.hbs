@@ -1,0 +1,23 @@
+<h2>{{rockName}} climbing routes:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Route name</th>
+      <th>Difficulty</th>
+      <th>About</th>
+      <th>Conqueror</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each climbingRoutes}}
+      <tr>
+        <th>{{this.route_number}}</th>
+        <th>{{this.route_name}}</th>
+        <th>{{this.difficulty}}</th>
+        <th>{{this.about}}</th>
+        <th>{{this.conqueror}}</th>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
