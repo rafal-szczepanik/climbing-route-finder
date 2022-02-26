@@ -1,11 +1,13 @@
+{{#each lands}}
+  <li>{{this.land_name}}</li>
+{{/each}}
 <h2>Choose Jura you want to search</h2>
 <form action="/land/area" method="POST">
-  <label for="">
-    <select size="3" name="land_name">
-      {{#each lands}}
-        <option value="{{this.land_name}}">{{this.land_name}}</option>
-      {{/each}}
-    </select>
-  </label>
-  <button>Szukaj</button>
+  <span><label for=""><select size="3" name="land_name">
+    {{#each lands}}
+      <option value="{{this.land_name}}">{{this.land_name}}</option>
+    {{/each}}
+  </select></label>
+    <button type="submit">Szukaj</button>
+  </span>
 </form>

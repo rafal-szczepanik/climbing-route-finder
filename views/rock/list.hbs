@@ -1,13 +1,16 @@
+{{#each rock}}
+  <li>{{this.rock_name}}</li>
+{{/each}}
 <h2>Filter by Rock</h2>
 <form action="/land/area/rock_area/rock/climbing_route" method="POST">
-  <li>
-    <select name="rock_area_name">
-      {{#each rockArea}}
+  <span>
+    <label><select name="rock_area_name">
+      {{#each rock}}
         <option value="{{this.rock_name}}">{{this.rock_name}}</option>
       {{/each}}
-    </select>
-    <button>Szukaj</button>
-  </li>
+    </select></label>
+    <button type="submit">Szukaj</button>
+  </span>
 </form>
 
 

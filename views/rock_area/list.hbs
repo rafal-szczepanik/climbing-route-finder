@@ -1,12 +1,16 @@
+{{#each rockArea}}
+  <li>{{this.name}}</li>
+{{/each}}
 <h2>Filter by Rock Area</h2>
 <form action="/land/area/rock_area/rock" method="POST">
-  <li><select name="rock_area_name">
-    {{log rockArea}}
-    {{#each rockArea}}
-      <option value="{{this.name}}">{{this.name}}</option>
-    {{/each}}
-  </select></li>
-  <button>Szukaj</button>
+  <span>
+    <label><select name="rock_area_name">
+      {{#each rockArea}}
+        <option value="{{this.name}}">{{this.name}}</option>
+      {{/each}}
+    </select></label>
+    <button type="submit">Szukaj</button>
+  </span>
 </form>
 
 
