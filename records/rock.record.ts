@@ -7,11 +7,13 @@ export class RockRecord {
     id: string;
     rock_name: string;
     location: string;
+    image_url: string;
 
     constructor(obj: RockRecord) {
         this.id = obj.id
         this.rock_name = obj.rock_name
         this.location = obj.location
+        this.image_url = obj.image_url;
     }
 
     static async getRocks(name): Promise<RockRecord[]> {

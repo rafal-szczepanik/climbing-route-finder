@@ -1,5 +1,4 @@
 import {pool} from "../utils/db";
-import {v4 as uuid} from 'uuid';
 import {FieldPacket} from "mysql2";
 
 type RockRecordResult = [LandRecord[], FieldPacket[]]
@@ -17,13 +16,6 @@ export class LandRecord {
 
     static async listAll(): Promise<LandRecord[]> {
         const [results] = await pool.execute("SELECT * FROM `land`") as RockRecordResult
-        return results.map(obj => new LandRecord(obj))
-    }
-
-    static async getArea(name): Promise<LandRecord[]> {
-        const [results] = await pool.execute("SELECT * FROM `area` WHERE `land_name` = :name", {
-            name
-        }) as RockRecordResult
         return results.map(obj => new LandRecord(obj))
     }
 }
