@@ -1,6 +1,8 @@
-{{#each lands}}
-  <li>{{this.land_name}}</li>
-{{/each}}
+<div class="list-wrapper">
+  {{#each lands}}
+    <li>{{this.land_name}}</li>
+  {{/each}}
+</div>
 <h2>Choose Jura you want to search</h2>
 <form action="/land/area" method="POST">
   <span><label for=""><select size="3" name="land_name">

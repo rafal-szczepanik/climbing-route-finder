@@ -1,6 +1,8 @@
-{{#each rock}}
-  <li>{{this.rock_name}}</li>
-{{/each}}
+<div class="list-wrapper">
+  {{#each rock}}
+    <li>{{this.rock_name}}</li>
+  {{/each}}
+</div>
 <h2>Filter by Rock</h2>
 <form action="/land/area/rock_area/rock/climbing_route" method="POST">
   <span>
