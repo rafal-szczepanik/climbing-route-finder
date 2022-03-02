@@ -12,6 +12,8 @@ import {areaRouter} from "./routers/area";
 import {climbingRouteRouter} from "./routers/climbing_route";
 import {rockArenaRouter} from "./routers/rock_area";
 import {rockRouter} from "./routers/rock";
+import {handleError} from "./middlewares/error-handler";
+import {handlebarHelpers} from "./utils/handlebar-helpers";
 
 const app = express();
 
@@ -23,7 +25,7 @@ app.use(urlencoded({
 //View engine
 app.engine('.hbs', engine({
     extname: '.hbs',
-    // helpers: handlebarsHelpers
+    helpers: handlebarHelpers
 }))
 app.set('view engine', '.hbs')
 
@@ -35,6 +37,7 @@ app.use('/land/area/rock_area/rock', rockRouter)
 app.use('/land/area/rock_area/rock/climbing_route', climbingRouteRouter)
 
 //Error middlewares
+app.use(handleError)
 app.use(notFound)
 
 app.listen(3000, '0.0.0.0', () => {
